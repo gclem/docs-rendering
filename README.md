@@ -8,12 +8,22 @@ In this repository, you will find all configurations, themes and plugins that we
 
 ## Pelican
 
-[Pelican](https://github.com/getpelican/pelican) is a versatil extensible static site generator, written in Python
-
+Description from the Pelican repository:
+> [Pelican](https://github.com/getpelican/pelican) is a static site generator, written in Python
+>
 >    - Write content in Markdown using your editor of choice
 >    - Includes a simple command line tool to (re)generate site files
 >    - Easy to interface with version control systems and web hooks
 >    - Completely static output is simple to host anywhere
+
+The choice of Pelican was done for its great extensible capabilities. 
+
+1. We could easily create plugins that manage our hierachical files structure:
+    - for custom url generation.
+    - for entity linking.
+2. We took advantage of the python's awesome and extensible implementation of markdown for handling
+our custom content.
+3. We could in a next step, quickly change the look of the site thanks to a theme powered by jinja2 template.
 
 ![Home](screenshots/pelican-diagram.png)
 
