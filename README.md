@@ -74,7 +74,7 @@ ENTITY_TYPES = {
 ```
 
 #### Entity children
-When needed, for each entity, we add a children property that lists all authorized children (useful in jinja2 templates for children list rendering). 
+When needed, for each entity, we add a children property that lists all authorized children (useful in jinja2 templates for children list rendering).
 
 ```py
 # entities children configuration in pelicanconf.py
@@ -98,7 +98,7 @@ ENTITY_TYPES = {
 We needed to exclude some part of the default generated url by pelican without the need to include 
 the `override_url` and `override_save_as` properties in each file.
 
-Those properties are generated for each entity using the config property `EXCLUDE_SLUGS`
+Those properties are generated for each entity using the config property `EXCLUDE_SLUGS`.
 
 ```py
 # entities slug exclusion configuration in pelicanconf.py
@@ -133,7 +133,7 @@ Contains Jinja2 filters used in templates.
 get an array of (title, url) from parents of an OVH Entity
 
 ```jinja
-<!-- example -->
+<!-- usage example -->
 <ul>
     {%for text, url in entity|breadcrumbs%}
     <li>
@@ -148,7 +148,7 @@ get an array of (title, url) from parents of an OVH Entity
 get an array of related guides for a given guide
 
 ```jinja
-<!-- example -->
+<!-- usage example -->
 {% set related_entities = entity|related %}
 ...
 {% for related_entity in related_entities %}
@@ -165,7 +165,7 @@ get an array of related guides for a given guide
 filter visible entities (visible property of entity == True)
 
 ```jinja
-<!-- example -->
+<!-- usage example -->
 {% for section, guides in entity.sections['odd'].items() %}
     {% set visible_guides = guides|visible %}
     {% if visible_guides|length > 0 %}
@@ -185,7 +185,7 @@ filter visible entities (visible property of entity == True)
 translate a content according to a given language. Dictionary defined in [config/translations.yml](./config/translation.yml)
 
 ```jinja
-<!-- example -->
+<!-- usage example -->
 <h3>{{section|translate(entity.global)}}</h3>
 ```
 
