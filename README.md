@@ -2,7 +2,20 @@
 
 [docs.ovh.com](https://docs.ovh.com/) is entirely generated with [Pelican](https://github.com/getpelican/pelican) from `markdown` [files](https://github.com/ovh/docs)
 
-In this repository, you will find all configurations, themes and plugins that we use
+In this repository, you will find all configurations, themes and plugins that we use in the context of the continuous delivery of [docs.ovh.com](https://docs.ovh.com/) illustrated in the diagram below (`green` part).
+
+![CDS](screenshots/cds-diagram.png)
+
+## Pelican
+
+[Pelican](https://github.com/getpelican/pelican) is a versatil extensible static site generator, written in Python
+
+>    - Write content in Markdown using your editor of choice
+>    - Includes a simple command line tool to (re)generate site files
+>    - Easy to interface with version control systems and web hooks
+>    - Completely static output is simple to host anywhere
+
+![Home](screenshots/pelican-diagram.png)
 
 ## Plugins
 
@@ -10,8 +23,10 @@ In this repository, you will find all configurations, themes and plugins that we
 extends [`pelican-entities`](https://github.com/AlexJF/pelican-entities) in order to suit our needs.
 
 #### Entity matching
-Because of our docs repository is structured in a hierarchical manner, we needed to easily define search path for entity using regexp 
-instead of just a folder name.
+
+Because of our docs repository is structured in a hierarchical manner, we needed to easily define search path for entity using regexp instead of just a folder name.
+
+More info about entity naming and hierarchy can be found [here](https://github.com/ovh/docs/blob/master/docs-guideline/docs-guideline.md)
 
 ```
 # repository stucture example
@@ -57,8 +72,6 @@ ENTITY_TYPES = {
     },
 }
 ```
-
-more info about entity naming can be found [here](https://github.com/ovh/docs/blob/master/docs-guideline/docs-guideline.md)
 
 #### Entity children
 When needed, for each entity, we add a children property that lists all authorized children (useful in jinja2 templates for children list rendering). 
